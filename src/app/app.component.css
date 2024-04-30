@@ -1,0 +1,13 @@
+.delete{
+    display: inline-block;
+    padding: 2px 2px;
+   
+    background-color: red;
+}
+.equal{
+    display: inline-block;
+    padding: 2px 4px;;
+    
+    background-color: greenyellow;
+
+}

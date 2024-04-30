@@ -1,0 +1,63 @@
+<label>Welcome to Angulor calculator</label>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="calculateForm">
+        <div class="form-group">
+          <input 
+            class="inputs"
+            [value]="displayInput"
+            formControlName="inputData">
+          <div>
+            <input 
+              class="result"
+              [value]="result">
+          </div>
+          <div *ngIf="calculateForm.get('inputData')?.errors">
+            invalid enterence.
+          </div>         
+
+        </div>
+        <div class="operand">
+          <button type="button" (click)="pressOperand('+')">+</button>
+          <button type="button" (click)="pressOperand('-')">-</button>
+          <button type="button" (click)="pressOperand('*')">*</button>
+          <button type="button" (click)="pressOperand('/')">/</button>
+        </div>
+        <div class="buttons" >
+          <div>
+            <button type="button" (click)="pressNum('7')">7</button>
+            <button type="button" (click)="pressNum('8')">8</button>
+            <button type="button" (click)="pressNum('9')">9</button>     
+          </div>
+          <div>
+            <button type="button" (click)="pressNum('4')">4</button>
+            <button type="button" (click)="pressNum('5')">5</button>
+            <button type="button" (click)="pressNum('6')">6</button>
+          </div>
+          <div>
+            <button type="button" (click)="pressNum('1')">1</button>
+            <button type="button" (click)="pressNum('2')">2</button>
+            <button type="button" (click)="pressNum('3')">3</button>
+          </div>
+          <div>
+            <button type="button" (click)="pressNum('0')">0</button>
+            <button (click)="pressNum('.')">.</button>
+            <button (click)="pressOperand('%')">%</button>
+          </div>
+
+        </div>        
+        <div class="result">
+          <button class="delete" type="button" (click)="deleteLast()"> clear </button>
+          <button class="delete" type="button" (click)="deleteAll()">Delete All</button>
+          <button 
+            class="equal" type="button" 
+            (click)="getResult()"
+            >=</button>
+        </div>
+    
+
+      </form>
+    </div>    
+  </div>
+</div>
